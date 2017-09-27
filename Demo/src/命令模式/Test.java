@@ -13,4 +13,12 @@ package 命令模式;
 */
 public class Test {
 
+	public static void main(String[] args) {
+		//先有个厨师等待执行命令
+		CookReceiver cook=new CookReceiver();
+		Command command=new orderCommand(cook);
+		Customer customer=new Customer(command);
+		customer.execute();
+		command.execute();
+	}
 }
