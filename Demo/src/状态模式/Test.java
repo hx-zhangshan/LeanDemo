@@ -9,6 +9,9 @@ package ״̬ģʽ;
 public class Test {
 
 	public static void main(String[] args) {
-		
+		Student student=new Student(new AddState());
+		System.out.println("EEEE:::"+student.operate(11, 22));
+		student.setState(new Substate());
+		System.out.println("KKKKKK:L::::"+student.operate(11, 22));
 	}
 }
