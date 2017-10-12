@@ -11,17 +11,22 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes={SpringBoot.class})
+@ContextConfiguration(classes=SpringBoot.class)
+@ActiveProfiles(profiles="tes")
 public class JunitTest {
 
 	@Autowired
 	private Student student;
 	@Autowired
 	private DataSource data;
+	
+	@Autowired
+	private Imessage message;
 	
 	@Test
 	public  void test() {
@@ -42,5 +47,9 @@ public class JunitTest {
 		}
 		connection.close();
 		cs.close();
+	}
+	@Test
+	public void test2(){
+		message.say();
 	}
 }
