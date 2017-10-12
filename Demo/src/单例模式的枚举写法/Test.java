@@ -7,4 +7,13 @@ package 单例模式的枚举写法;
 */
 public class Test {
 
+	public static void main(String[] args) {
+		Resoure instence = Somthing.INSTENCE.getInstence();
+		Resoure instence2 = Somthing.INSTENCE.getInstence();
+		instence2.setName("wang");
+		instence.setName("zhang");
+		System.out.println(instence.getName());
+		
+		System.out.println(instence2.getName());
+	}
 }
